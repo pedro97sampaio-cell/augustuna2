@@ -1,0 +1,83 @@
+{
+  "historia": {
+    "titulo": "A Tradição que Desafia",
+    "introducao": [
+      "Fundada em 1996, a Augustuna nasceu do espírito boémio e musical que pulsa no coração da Universidade do Minho. O que começou como uma tuna mista rapidamente evoluiu para uma tuna masculina, honrando a tradição académica de Braga enquanto reinventava o conceito de musicalidade tunante.",
+      "Batizada em homenagem ao Mestre Augusto, a nossa identidade é um equilíbrio perfeito entre o respeito pela herança académica e a ousadia de quem não tem medo de ser diferente — tal como António Variações, que nos inspira a fundir o tradicional com o contemporâneo."
+    ],
+    "estatisticas": {
+      "anos": 30,
+      "membros": 150,
+      "atuacoes_estimadas": 500,
+      "paises_visitados": 12
+    },
+    "cronologia": [
+      {
+        "ano": "1996",
+        "titulo": "A Fundação",
+        "descricao": "Nasce a Augustuna como Tuna Mista da Universidade do Minho, unindo estudantes apaixonados pela música e pela tradição académica de Braga."
+      },
+      {
+        "ano": "1999",
+        "titulo": "Evolução para Tuna Masculina",
+        "descricao": "A tuna assume a sua identidade definitiva como Tuna Académica Masculina, consolidando os seus valores e tradições."
+      },
+      {
+        "ano": "2003",
+        "titulo": "Primeiro Álbum",
+        "descricao": "Lançamento da primeira discografia oficial, imortalizando o repertório que se tornou a banda sonora de várias gerações académicas."
+      },
+      {
+        "ano": "2008",
+        "titulo": "Conquistas Internacionais",
+        "descricao": "A Augustuna atravessa fronteiras, representando a Universidade do Minho em festivais internacionais de tunas por toda a Europa."
+      },
+      {
+        "ano": "2016",
+        "titulo": "20 Anos de Boémia",
+        "descricao": "Celebração do vigésimo aniversário com um concerto especial que reuniu ex-tunos de todas as gerações num espetáculo memorável."
+      },
+      {
+        "ano": "2024",
+        "titulo": "Nova Era",
+        "descricao": "Renovação da identidade visual e digital, mantendo a essência boémia e musical que nos define há quase três décadas."
+      },
+      {
+        "ano": "2026",
+        "titulo": "30 Anos — O Futuro é Tradicional",
+        "descricao": "Celebramos três décadas de tradição e irreverência. O passado guia-nos, mas o palco é o futuro. A história continua a ser escrita."
+      }
+    ]
+  },
+  "traje_hierarquia": [
+    {
+      "posto": "Seminóide",
+      "icone": "hgi-footprints-01",
+      "descricao": "O início de tudo — o seminóide é aquele que dá os primeiros passos na tuna, aprendendo as tradições, as músicas e o espírito boémio que define a Augustuna."
+    },
+    {
+      "posto": "Semina",
+      "icone": "hgi-shirt-01",
+      "descricao": "Após provar o seu valor, o seminóide torna-se semina — já faz parte da família, participando ativamente nos ensaios, atuações e na vida boémia da tuna."
+    },
+    {
+      "posto": "Tuno",
+      "icone": "hgi-wind-01",
+      "descricao": "O tuno é o membro pleno da Augustuna — veste o traje com orgulho, carrega a capa com as fitas e emblemas que contam a sua história, e representa a tuna onde quer que vá."
+    }
+  ],
+  "eventos_institucionais": {
+    "magna_augusta": {
+      "nome": "Magna Augusta",
+      "subtitulo": "O Festival Internacional de Tunas organizado pela Augustuna",
+      "descricao": "O Magna Augusta é o evento mestre anual que leva todas as honras de Braga além fronteiras. Organizado anualmente para partilhar o palco com grandes nomes da música académica internacional no Theatro Circo.",
+      "referencia_json": "data/eventos.json"
+    },
+    "festa_semina": {
+      "nome": "Festa do Semina",
+      "subtitulo": "A festa que consagra as novas gerações",
+      "descricao": "Um evento totalmente organizado pelos caloiros (seminóides e seminas) da Augustuna, projetado para consolidar os laços com a comunidade académica e arrecadar fundos e sorrisos.",
+      "referencia_json": "data/eventos.json"
+    }
+  }
+}

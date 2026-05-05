@@ -17,21 +17,21 @@ from PIL import Image
 import sys
 
 # ─── THEME ────────────────────────────────────────────────────
-ctk.set_appearance_mode("dark")
-ctk.set_default_color_theme("dark-blue")
+ctk.set_appearance_mode("light")
+ctk.set_default_color_theme("blue")
 
 # Brand colors
-AZUL_PROFUNDO = "#0A1628"
-AZUL_REAL = "#1B3A5C"
-DOURADO = "#C9A84C"
-GOLD_HOVER = "#D4B85E"
-BG_DARK = "#111111"
-BG_SIDEBAR = "#0D0D0D"
-BG_CARD = "#1A1A1A"
-FG_TEXT = "#E0E0E0"
-FG_MUTED = "#888888"
+AZUL_PROFUNDO = "#001A3D"
+AZUL_REAL = "#00336C"
+DOURADO = "#D29948"
+GOLD_HOVER = "#E0A858"
+BG_DARK = "#f4f7fb"
+BG_SIDEBAR = "#00336c"
+BG_CARD = "#eef3f9"
+FG_TEXT = "#111827"
+FG_MUTED = "#6B7280"
 SUCCESS = "#2E8B57"
-DANGER = "#B22222"
+DANGER = "#dc2626"
 
 # ─── PATHS ───────────────────────────────────────────────────
 APP_NAME = "AugustunaAdminHub"
@@ -137,7 +137,7 @@ class AdminHub(ctk.CTk):
             btn.pack(fill="x", padx=12, pady=2)
             self.nav_buttons[key] = btn
 
-        ctk.CTkButton(self.sidebar, text="⬆  ATUALIZAR SITE", fg_color=DOURADO, text_color=BG_DARK, font=("Courier New", 11, "bold"), height=40, command=self.git_push).pack(side="bottom", fill="x", padx=12, pady=20)
+        ctk.CTkButton(self.sidebar, text="⬆  ATUALIZAR SITE", fg_color=DOURADO, text_color="white", font=("Courier New", 11, "bold"), height=40, command=self.git_push).pack(side="bottom", fill="x", padx=12, pady=20)
 
     def show_module(self, key):
         for k, b in self.nav_buttons.items(): b.configure(fg_color=AZUL_REAL if k == key else "transparent")
@@ -172,7 +172,7 @@ class NoticiasModule(ctk.CTkFrame):
         header = ctk.CTkFrame(self, fg_color="transparent")
         header.pack(fill="x", pady=(0, 15))
         ctk.CTkLabel(header, text="📰 Notícias", font=("Courier New", 20, "bold"), text_color=DOURADO).pack(side="left")
-        ctk.CTkButton(header, text="+ Nova", width=100, fg_color=DOURADO, text_color=BG_DARK, command=self._add).pack(side="right")
+        ctk.CTkButton(header, text="+ Nova", width=100, fg_color=DOURADO, text_color="white", command=self._add).pack(side="right")
         self.scroll = ctk.CTkScrollableFrame(self, fg_color=BG_DARK)
         self.scroll.pack(fill="both", expand=True)
         self._render()
@@ -210,7 +210,7 @@ class NoticiasEditor(ctk.CTkToplevel):
         self.img_label = ctk.CTkLabel(self, text=os.path.basename(self.img_path) or "Sem imagem")
         self.img_label.pack(**pad)
         ctk.CTkButton(self, text="Selecionar Imagem", command=self._pick).pack(**pad)
-        ctk.CTkButton(self, text="GUARDAR", fg_color=DOURADO, text_color=BG_DARK, command=self._save).pack(pady=20)
+        ctk.CTkButton(self, text="GUARDAR", fg_color=DOURADO, text_color="white", command=self._save).pack(pady=20)
     def _pick(self):
         p = filedialog.askopenfilename(); 
         if p: self.img_path = p; self.img_label.configure(text=os.path.basename(p))
@@ -230,7 +230,7 @@ class MembrosModule(ctk.CTkFrame):
     def _build(self):
         h = ctk.CTkFrame(self, fg_color="transparent"); h.pack(fill="x", pady=(0,15))
         ctk.CTkLabel(h, text="👥 Membros", font=("Courier New", 20, "bold"), text_color=DOURADO).pack(side="left")
-        ctk.CTkButton(h, text="+ Geração", width=100, fg_color=DOURADO, text_color=BG_DARK, command=self._add_gen).pack(side="right")
+        ctk.CTkButton(h, text="+ Geração", width=100, fg_color=DOURADO, text_color="white", command=self._add_gen).pack(side="right")
         self.scroll = ctk.CTkScrollableFrame(self, fg_color=BG_DARK); self.scroll.pack(fill="both", expand=True)
         self._render()
     def _render(self):
@@ -241,7 +241,7 @@ class MembrosModule(ctk.CTkFrame):
             ctk.CTkButton(f, text="+ Membro", width=80, command=lambda g=gi: self._add_mem(g)).pack(side="right", padx=5)
             ctk.CTkButton(f, text="🗑️", width=30, fg_color=DANGER, command=lambda g=gi: self._del_gen(g)).pack(side="right", padx=2)
             for mi, m in enumerate(gen.get("elementos", [])):
-                mf = ctk.CTkFrame(f, fg_color="#222222"); mf.pack(fill="x", padx=15, pady=2)
+                mf = ctk.CTkFrame(f, fg_color="#ffffff"); mf.pack(fill="x", padx=15, pady=2)
                 ctk.CTkLabel(mf, text=f"{m['nome']} ({m.get('alcunha','')})").pack(side="left", padx=10)
                 ctk.CTkButton(mf, text="✕", width=25, fg_color=DANGER, command=lambda g=gi, m_=mi: self._del_mem(g, m_)).pack(side="right", padx=5)
                 ctk.CTkButton(mf, text="✏️", width=25, fg_color=AZUL_REAL, command=lambda g=gi, m_=mi: self._edit_mem(g, m_)).pack(side="right", padx=2)
@@ -271,7 +271,7 @@ class MemberEditor(ctk.CTkToplevel):
         self.data_pass = self._field("Data de Passagem (YYYY-MM-DD)", "data_passagem")
         self.img_label = ctk.CTkLabel(self, text=os.path.basename(self.img_path) or "Sem foto"); self.img_label.pack(**pad)
         ctk.CTkButton(self, text="Escolher Foto", command=self._pick).pack(**pad)
-        ctk.CTkButton(self, text="GUARDAR", fg_color=DOURADO, text_color=BG_DARK, command=self._save).pack(pady=20)
+        ctk.CTkButton(self, text="GUARDAR", fg_color=DOURADO, text_color="white", command=self._save).pack(pady=20)
     def _field(self, label, key):
         ctk.CTkLabel(self, text=label).pack(padx=20, anchor="w")
         e = ctk.CTkEntry(self, width=380); e.pack(padx=20, pady=5); e.insert(0, self.item.get(key,"")); return e
@@ -298,13 +298,13 @@ class EventosModule(ctk.CTkFrame):
         self._tab_ui(self.tabs.tab("Magna Augusta"), "magna_augusta")
         self._tab_ui(self.tabs.tab("Festa do Semina"), "festa_semina")
     def _tab_ui(self, tab, key):
-        ctk.CTkButton(tab, text="+ Nova Edição", fg_color=DOURADO, text_color=BG_DARK, command=lambda: self._add(key, tab)).pack(pady=10)
+        ctk.CTkButton(tab, text="+ Nova Edição", fg_color=DOURADO, text_color="white", command=lambda: self._add(key, tab)).pack(pady=10)
         s = ctk.CTkScrollableFrame(tab, fg_color="transparent"); s.pack(fill="both", expand=True)
         self._render_ev(s, key)
     def _render_ev(self, scroll, key):
         for w in scroll.winfo_children(): w.destroy()
         for i, ev in enumerate(self.data.get(key, [])):
-            f = ctk.CTkFrame(scroll, fg_color="#222222"); f.pack(fill="x", pady=2)
+            f = ctk.CTkFrame(scroll, fg_color="#ffffff"); f.pack(fill="x", pady=2)
             ctk.CTkLabel(f, text=f"{ev['edicao']} ({ev['ano']})").pack(side="left", padx=10)
             ctk.CTkButton(f, text="🗑️", width=30, fg_color=DANGER, command=lambda idx=i: self._del(key, idx, scroll)).pack(side="right", padx=5)
             ctk.CTkButton(f, text="✏️", width=30, fg_color=AZUL_REAL, command=lambda idx=i: self._edit(key, idx, scroll)).pack(side="right", padx=2)
@@ -332,7 +332,7 @@ class EventEditor(ctk.CTkToplevel):
         self.desc = ctk.CTkTextbox(self, height=100); self.desc.pack(fill="x", padx=20); self.desc.insert("1.0", self.item.get("descricao",""))
         self.img_label = ctk.CTkLabel(self, text=os.path.basename(self.img_path) or "Sem cartaz"); self.img_label.pack(**pad)
         ctk.CTkButton(self, text="Escolher Cartaz", command=self._pick).pack(**pad)
-        ctk.CTkButton(self, text="GUARDAR", fg_color=DOURADO, text_color=BG_DARK, command=self._save).pack(pady=20)
+        ctk.CTkButton(self, text="GUARDAR", fg_color=DOURADO, text_color="white", command=self._save).pack(pady=20)
     def _field(self, label, key):
         ctk.CTkLabel(self, text=label).pack(padx=20, anchor="w")
         e = ctk.CTkEntry(self, width=380); e.pack(padx=20, pady=5); e.insert(0, str(self.item.get(key,""))); return e
@@ -360,7 +360,7 @@ class AtuacoesModule(ctk.CTkFrame):
         for label, key in tab_map:
             self.tabs.add(label); self._tab_ui(self.tabs.tab(label), key)
     def _tab_ui(self, tab, key):
-        ctk.CTkButton(tab, text="+ Nova Atuação", fg_color=DOURADO, text_color=BG_DARK, command=lambda: self._add(key, tab)).pack(pady=10)
+        ctk.CTkButton(tab, text="+ Nova Atuação", fg_color=DOURADO, text_color="white", command=lambda: self._add(key, tab)).pack(pady=10)
         s = ctk.CTkScrollableFrame(tab, fg_color="transparent"); s.pack(fill="both", expand=True)
         self._render(s, key)
     def _render(self, scroll, key):
@@ -371,7 +371,7 @@ class AtuacoesModule(ctk.CTkFrame):
             items.sort(key=lambda x: datetime.strptime(x['data'], '%d %b %Y'), reverse=True)
         except: pass
         for i, item in enumerate(items):
-            f = ctk.CTkFrame(scroll, fg_color="#222222"); f.pack(fill="x", pady=2)
+            f = ctk.CTkFrame(scroll, fg_color="#ffffff"); f.pack(fill="x", pady=2)
             ctk.CTkLabel(f, text=f"{item['data']} — {item['titulo']}").pack(side="left", padx=10)
             ctk.CTkButton(f, text="🗑️", width=30, fg_color=DANGER, command=lambda idx=i: self._del(key, idx, scroll)).pack(side="right", padx=5)
             ctk.CTkButton(f, text="✏️", width=30, fg_color=AZUL_REAL, command=lambda idx=i: self._edit(key, idx, scroll)).pack(side="right", padx=2)
@@ -405,7 +405,7 @@ class AtuacaoEditor(ctk.CTkToplevel):
         self.ano = ctk.CTkEntry(f, width=80); self.ano.pack(side="left", padx=2); self.ano.insert(0, y_val)
         ctk.CTkLabel(self, text="Local").pack(**pad, anchor="w")
         self.loc = ctk.CTkEntry(self, width=400); self.loc.pack(**pad); self.loc.insert(0, self.item.get("localizacao",""))
-        ctk.CTkButton(self, text="GUARDAR", fg_color=DOURADO, text_color=BG_DARK, command=self._save).pack(pady=20)
+        ctk.CTkButton(self, text="GUARDAR", fg_color=DOURADO, text_color="white", command=self._save).pack(pady=20)
     def _save(self):
         self.callback({"titulo":self.tit.get(), "data":f"{self.dia.get()} {self.mes.get()} {self.ano.get()}", "localizacao":self.loc.get()})
         self.destroy()
@@ -420,7 +420,7 @@ class LojaModule(ctk.CTkFrame):
     def _build(self):
         h = ctk.CTkFrame(self, fg_color="transparent"); h.pack(fill="x", pady=(0,15))
         ctk.CTkLabel(h, text="🛍️ Loja", font=("Courier New", 20, "bold"), text_color=DOURADO).pack(side="left")
-        ctk.CTkButton(h, text="+ Produto", width=100, fg_color=DOURADO, text_color=BG_DARK, command=self._add).pack(side="right")
+        ctk.CTkButton(h, text="+ Produto", width=100, fg_color=DOURADO, text_color="white", command=self._add).pack(side="right")
         self.scroll = ctk.CTkScrollableFrame(self, fg_color=BG_DARK); self.scroll.pack(fill="both", expand=True)
         self._render()
     def _render(self):
@@ -450,7 +450,7 @@ class LojaEditor(ctk.CTkToplevel):
         self.desc = ctk.CTkTextbox(self, height=80); self.desc.pack(fill="x", padx=20); self.desc.insert("1.0", self.item.get("descricao",""))
         self.img_label = ctk.CTkLabel(self, text=os.path.basename(self.img_path) or "Sem imagem"); self.img_label.pack(**pad)
         ctk.CTkButton(self, text="Escolher Imagem", command=self._pick).pack(**pad)
-        ctk.CTkButton(self, text="GUARDAR", fg_color=DOURADO, text_color=BG_DARK, command=self._save).pack(pady=20)
+        ctk.CTkButton(self, text="GUARDAR", fg_color=DOURADO, text_color="white", command=self._save).pack(pady=20)
     def _field(self, label, key):
         ctk.CTkLabel(self, text=label).pack(padx=20, anchor="w")
         e = ctk.CTkEntry(self, width=380); e.pack(padx=20, pady=5); e.insert(0, str(self.item.get(key,""))); return e
@@ -484,7 +484,7 @@ class ContactosModule(ctk.CTkFrame):
         self.morada = self._f(tab, "Morada", g.get("morada",""))
         self.email = self._f(tab, "Email", g.get("email",""))
         self.fone = self._f(tab, "Telefone", g.get("telefone",""))
-        ctk.CTkButton(tab, text="Guardar", fg_color=DOURADO, text_color=BG_DARK, command=self._save_g).pack(pady=20)
+        ctk.CTkButton(tab, text="Guardar", fg_color=DOURADO, text_color="white", command=self._save_g).pack(pady=20)
     def _ui_redes(self, tab):
         r = self.data.get("redes_sociais", {})
         self.yt = self._f(tab, "YouTube", r.get("youtube",""))
@@ -492,9 +492,9 @@ class ContactosModule(ctk.CTkFrame):
         self.fb = self._f(tab, "Facebook", r.get("facebook",""))
         self.li = self._f(tab, "LinkedIn", r.get("linkedin",""))
         self.sp = self._f(tab, "Spotify", r.get("spotify",""))
-        ctk.CTkButton(tab, text="Guardar", fg_color=DOURADO, text_color=BG_DARK, command=self._save_r).pack(pady=20)
+        ctk.CTkButton(tab, text="Guardar", fg_color=DOURADO, text_color="white", command=self._save_r).pack(pady=20)
     def _ui_dir(self, tab):
-        ctk.CTkButton(tab, text="+ Dirigente", fg_color=DOURADO, text_color=BG_DARK, command=self._add_d).pack(pady=10)
+        ctk.CTkButton(tab, text="+ Dirigente", fg_color=DOURADO, text_color="white", command=self._add_d).pack(pady=10)
         self.ds = ctk.CTkScrollableFrame(tab, fg_color="transparent"); self.ds.pack(fill="both", expand=True)
         self._render_d()
     def _f(self, tab, l, v):
@@ -502,7 +502,7 @@ class ContactosModule(ctk.CTkFrame):
     def _render_d(self):
         for w in self.ds.winfo_children(): w.destroy()
         for i, d in enumerate(self.data.get("dirigentes", [])):
-            f = ctk.CTkFrame(self.ds, fg_color="#222222"); f.pack(fill="x", pady=2)
+            f = ctk.CTkFrame(self.ds, fg_color="#ffffff"); f.pack(fill="x", pady=2)
             ctk.CTkLabel(f, text=f"{d['cargo']}: {d['nome']}").pack(side="left", padx=10)
             ctk.CTkButton(f, text="🗑️", width=30, fg_color=DANGER, command=lambda idx=i: self._del_d(idx)).pack(side="right", padx=5)
     def _save_g(self):
@@ -528,7 +528,7 @@ class LayoutModule(ctk.CTkFrame):
         ctk.CTkLabel(self, text="🔧 Ordenação das Secções", font=("Courier New", 20, "bold"), text_color=DOURADO).pack(anchor="w", pady=(0,15))
         self.s = ctk.CTkScrollableFrame(self, fg_color=BG_DARK); self.s.pack(fill="both", expand=True)
         self._render()
-        ctk.CTkButton(self, text="GUARDAR ORDENAÇÃO", fg_color=DOURADO, text_color=BG_DARK, command=self._save).pack(pady=20)
+        ctk.CTkButton(self, text="GUARDAR ORDENAÇÃO", fg_color=DOURADO, text_color="white", command=self._save).pack(pady=20)
     def _render(self):
         for w in self.s.winfo_children(): w.destroy()
         for i, name in enumerate(self.data["order"]):
