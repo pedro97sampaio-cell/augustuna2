@@ -15,27 +15,32 @@
     {
       "cargo": "Magister",
       "nome": "Luís “Engenheiro PnB P90” Barros",
-      "telefone": "+351 931 311 840"
+      "telefone": "+351 931 311 840",
+      "imagem": "/fotos contactos/engenheiro.jpg"
     },
     {
       "cargo": "Vice-Magister",
       "nome": "Afonso “Carpete Cabeludo” Castro",
-      "telefone": "+351 934 023 134"
+      "telefone": "+351 934 023 134",
+      "imagem": "/fotos contactos/carpete.jpg"
     },
     {
       "cargo": "Tesoureiro",
       "nome": "Pedro “Squidward” Ferreira",
-      "telefone": "+351 911 580 083"
+      "telefone": "+351 911 580 083",
+      "imagem": "/fotos contactos/squidward.jpg"
     },
     {
       "cargo": "Vice-Tesoureiro",
       "nome": "Eduardo “Pido” Lima",
-      "telefone": "+351 969 694 365"
+      "telefone": "+351 969 694 365",
+      "imagem": "/fotos contactos/pido.jpg"
     },
     {
       "cargo": "Vogal",
       "nome": "Pedro “Grego” Freitas",
-      "telefone": "+351 919 299 587"
+      "telefone": "+351 919 299 587",
+      "imagem": "/fotos contactos/grego.jpg"
     }
   ]
 }

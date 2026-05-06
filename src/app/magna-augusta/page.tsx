@@ -56,7 +56,7 @@ export default function MagnaAugustaPage() {
             
             <div className="flex flex-col md:flex-row gap-12 mb-16">
               <div className="flex-1">
-                <p className="text-foreground/80 leading-relaxed text-lg">
+                <p className="text-foreground/80 leading-relaxed text-lg italic bg-primary/5 p-4 rounded-xl border border-primary/10">
                   {selectedEdition.descricao || "Mais informações sobre esta edição em breve."}
                 </p>
               </div>

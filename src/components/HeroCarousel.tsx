@@ -66,7 +66,7 @@ export default function HeroCarousel() {
             src={s.image}
             alt={s.alt}
             fill
-            className={`object-cover object-center ${
+            className={`object-cover object-[center_top] sm:object-center ${
               i === current ? "animate-zoom-pan" : "scale-105"
             }`}
             priority={i === 0}
@@ -77,8 +77,8 @@ export default function HeroCarousel() {
       ))}
 
       {/* Gradient overlays for text legibility */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/40 pointer-events-none z-[1]" />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent pointer-events-none z-[1]" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/60 sm:from-black/80 sm:via-black/20 sm:to-black/40 pointer-events-none z-[1]" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent sm:from-black/50 sm:via-transparent sm:to-transparent pointer-events-none z-[1]" />
 
       {/* Content — bottom-left, like Nickel reference */}
       <div className="absolute inset-0 z-10 flex flex-col justify-end px-8 sm:px-14 md:px-20 lg:px-28 pb-20 sm:pb-24 md:pb-28">

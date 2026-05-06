@@ -1,25 +1,25 @@
 [
   {
-    "id": "n002",
-    "data": "Set 2025",
-    "titulo": "Recrutamento 2025/2026 — Junta-te à Família",
-    "corpo": "Novo ano letivo, nova oportunidade! A Augustuna abre portas a todos os estudantes da UMinho que queiram viver a tradição tunante. Não precisas de saber tocar — basta vontade!",
+    "id": "n001",
+    "data": "Mar 2026",
+    "titulo": "IX Magna Augusta e 30 anos de Augustuna",
+    "corpo": "Durante os dias 20 e 21 de março, a cidade bracarense viveu ao ritmo das cordas, das vozes e da amizade que une gerações de tunos, devido ao Festival de Tunas Académicas, organizado pela Augustuna.",
     "imagem": "",
-    "categoria": "recrutamento"
+    "categoria": "cultura"
+  },
+  {
+    "id": "n002",
+    "data": "Out 2022",
+    "titulo": "Augustuna realiza a Festa do Semina",
+    "corpo": "Os caloiros da Augustuna – Tuna Académica da Universidade do Minho vão realizar mais uma edição da sua festa, a Festa do Semina, que contará com a participação da Tun'ao Minho.",
+    "imagem": "",
+    "categoria": "cultura"
   },
   {
     "id": "n003",
-    "data": "Mai 2024",
-    "titulo": "XXVII Galardões \"A Nossa Terra\"",
-    "corpo": "A Augustuna atuou nos XXVII Galardões \"A Nossa Terra\", um evento de referência na região minhota que homenageia personalidades e projetos de destaque.",
-    "imagem": "",
-    "categoria": "premio"
-  },
-  {
-    "id": "n004",
-    "data": "Dez 2025",
-    "titulo": "Serenata de Natal — Braga",
-    "corpo": "Tradição anual da Augustuna: uma noite de serenatas pelas ruas do centro histórico de Braga, levando a música académica aos bracarenses na época natalícia.",
+    "data": "Mar 2026",
+    "titulo": "Festival de Tunas Académicas de regresso a Braga",
+    "corpo": "A cidade de Braga vai receber a IX Magna Augusta – Festival de Tunas Académicas. No âmbito das comemorações dos 30 anos da Augustuna, o evento contará com a participação de tunas nacionais de renome.",
     "imagem": "",
     "categoria": "cultura"
   }

@@ -12,8 +12,10 @@ export default function NoticiasPage() {
   return (
     <>
       {/* Hero */}
-      <section className="page-hero">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+      <section className="page-hero relative">
+        <div className="absolute inset-0 bg-[url('/fotos/ornelas.jpg')] bg-cover bg-[center_30%] opacity-40 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/80 to-primary/40 pointer-events-none" />
+        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <span className="page-hero-label">Atualidade</span>
           <h1 className="page-hero-title">
             <span className="gold-accent">Notícias</span>

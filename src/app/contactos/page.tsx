@@ -1,6 +1,7 @@
 import contactos from "@/data/contactos.json";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
+import Image from "next/image";
 
 export const metadata = { title: "Contactos — Augustuna" };
 
@@ -139,9 +140,13 @@ export default function ContactosPage() {
                 {contactos.dirigentes.map((d, i) => (
                   <div key={i} className="group flex flex-col text-center sm:text-left">
                     <div className="aspect-square bg-surface rounded-2xl mb-4 overflow-hidden border border-primary/5 flex items-center justify-center relative w-full">
-                      <span className="text-5xl opacity-10 group-hover:scale-110 transition-transform duration-500">
-                        👤
-                      </span>
+                      {(d as any).imagem ? (
+                        <Image src={(d as any).imagem} alt={d.nome} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                      ) : (
+                        <span className="text-5xl opacity-10 group-hover:scale-110 transition-transform duration-500">
+                          👤
+                        </span>
+                      )}
                     </div>
                     
                     <div className="flex flex-col flex-1">
